@@ -74,9 +74,12 @@ export default {
 .container {
   margin: 0 auto;
   max-width: 1000px;
+  min-height: 100vh;
   background-color: #ddd;
+  overflow: hidden;
 }
 h1 {
+  padding: 15px 0;
   text-align: center;
 }
 .horizontal {
@@ -86,19 +89,21 @@ h1 {
   justify-content: center;
 }
 .todo-form {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+  margin: 15px 0;
   padding: 15px;
-}
-.form-check { 
-  width: 29px;
-  height: 29px;
-  margin-right: 10px;
-}
-.form-todo {
-  font-size: 20px;
-  margin-right: 10px;
-}
-.form-submit {
-  font-size: 15px;
+  .form-check { 
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+  }
+  .form-todo {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .form-submit {
+    font-size: 15px;
+  }
 }
 .kanban {
   display: flex;
@@ -108,6 +113,7 @@ h1 {
     .board-title {
       text-align: center;
       font-size: 0.8em;
+      margin: 15px;
     }
     .todo-list {
       margin: 15px;
