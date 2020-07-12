@@ -1,6 +1,8 @@
 # nuxt-todo
 
-> My laudable Nuxt.js project
+Nuxjs + Tailwind + VeeValidate + Dayjs + FontAwesome
+
+![スクリーンショット 2020-07-12 19 09 27](https://user-images.githubusercontent.com/13103747/87243724-479d5d80-c473-11ea-8c14-a99e28b01ddd.png)
 
 ## Build Setup
 
