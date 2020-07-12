@@ -28,11 +28,14 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/dayjs',
+    '~/plugins/vee-validate'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/tailwindcss'
   ],
   /*
   ** Nuxt.js modules
@@ -40,6 +43,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-fontawesome',
   ],
   /*
   ** Axios module configuration
@@ -51,10 +55,28 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: [
+      "vee-validate/dist/rules" // vee-validateのルール
+    ],
     /*
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+  },
+  // TailwindCss
+  tailwindcss: {
+    configPath: '~/tailwind.config.js',
+    cssPath: '~/assets/css/tailwind.css',
+    exposeConfig: false
+  },
+  // FontAwesome
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      },
+    ],
   }
 }

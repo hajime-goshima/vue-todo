@@ -1,43 +1,39 @@
 <template>
-  <div class="TodoItem">
-    <span class="todo" :class="{'completed': this.completed}">{{this.todo}}</span>
-    <div class="right">
-      <span v-if="completed && completedAt" class="completed-datetime">{{formatedCompletedAt}}</span>
-      <button @click="onClickAction">{{this.completed ? '戻す' : '完了'}}</button>
+  <a href="" @click.prevent="onClickItem" class="flex flex-row justify-between">
+    <span class="" :class="{'line-through': completed}">{{title}}</span>
+    <div>
+      <span v-if="completedAt" class="text-gray-600">{{formatedCompletedAt}}</span>
+      <a class="text-gray-500">
+        <font-awesome-icon icon="minus-circle" @click.stop.prevent="onClickDismiss" class="hover:text-gray-700"/>
+      </a>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   props: {
     id: Number,
-    todo: String,
+    title: String,
     completed: Boolean,
     completedAt: Date,
   },
   computed: {
     formatedCompletedAt() {
-      return this.completedAt ? this.completedAt.toLocaleString('ja-JP') : 'no!'
+      return this.completedAt ? this.$dayjs().format('YYYY年MM月DD日 HH:mm:ss') : ''
     }
   },
   methods: {
-    onClickAction() {
+    onClickItem() {
       console.log('onClickAction' + this.id)
       this.$emit('toggle', this.id)
+    },
+    onClickDismiss() {
+      console.log('onClickDismiss' + this.id)
+      this.$emit('dismiss', this.id)
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.TodoItem {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  .completed {
-    color: #555;
-    text-decoration: line-through;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
