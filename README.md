@@ -2,7 +2,9 @@
 
 Nuxjs + Tailwind + VeeValidate + Dayjs + FontAwesome
 
-![スクリーンショット 2020-07-12 19 09 27](https://user-images.githubusercontent.com/13103747/87243724-479d5d80-c473-11ea-8c14-a99e28b01ddd.png)
+公開URL: [https://vue-todo.hazm.vercel.app/](https://vue-todo.hazm.vercel.app/)
+
+![スクリーンショット 2020-07-18 0 47 52](https://user-images.githubusercontent.com/13103747/87805503-61cea580-c890-11ea-8ee0-19c0a051ab93.png)
 
 ## Build Setup
 
