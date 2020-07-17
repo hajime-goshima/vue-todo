@@ -35,7 +35,7 @@ export const getters = {
 
 export const actions = {
   async nuxtServerInit ({ commit, dispatch }) {
-    console.warn('nuxtServerInit')
+    console.log('nuxtServerInit')
     commit('CLEAR_BOARDS')
     await dispatch('addBoard', 'default')
   },
@@ -81,7 +81,6 @@ export const mutations = {
   },
   ADD_BOARD(state, boardObj) {
     state.boards.push(boardObj)
-    console.warn(state.boards)
   },
   ADD_TASK(state, taskObj) {
     taskObj.completedAt = taskObj.completed ? new Date() : null
